@@ -3,6 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AsteroidTwoConfigSO", menuName = "Scriptable Objects/AsteroidTwoConfig")]
 public class AsteroidTwoConfigSO : ScriptableObject
 {
+    [Header("Sprite Variations")]
+    [SerializeField] private Sprite[] greyAsteroidSprites;
+    [SerializeField] private Sprite[] brownAsteroidSprites;
+
     [Header("Smallest and Largest sizes")]
     [SerializeField] private float minAsteroidScale;
     [SerializeField] private float maxAsteroidScale;
@@ -24,9 +28,6 @@ public class AsteroidTwoConfigSO : ScriptableObject
     [SerializeField] private float largeAsteroidMinMoveSpeed;
     [SerializeField] private float largeAsteroidMaxMoveSpeed;
 
-    [Header("Sprite Variations")]
-    [SerializeField] private Sprite[] asteroidSprites;
-
     [Header("Min and Max Spin Speeds based on scale")]
     [Header("range for small asteroids")]
     
@@ -45,6 +46,10 @@ public class AsteroidTwoConfigSO : ScriptableObject
 
     [Header("AudioFX")]
     [SerializeField] private AudioClip takeDamageFX;
+
+    [Header("DestructionFX")]
+    [SerializeField] private GameObject greyRoidFx;
+    [SerializeField] private GameObject brownRoidFx;
 
     //private cache of randomSpeed
     public float RandomSpinSpeed { get;private set; }
@@ -97,19 +102,40 @@ public class AsteroidTwoConfigSO : ScriptableObject
         return randomSpeed;
     }
 
-    public Sprite GetRandomSprite()
+    public Sprite GetRandomGreySprite()
     {
         //set a random sprite
-        int randomIndex = Random.Range(0, asteroidSprites.Length);
+        int randomIndex = Random.Range(0, greyAsteroidSprites.Length);
 
         //select a random sprite using the index
-        Sprite randomSprite = asteroidSprites[randomIndex];
+        Sprite randomSprite = greyAsteroidSprites[randomIndex];
 
         return randomSprite;    
     }
+    public Sprite GetRandomBrownSprite()
+    {
+        //set a random sprite
+        int randomIndex = Random.Range(0, brownAsteroidSprites.Length);
 
+        //select a random sprite using the index
+        Sprite randomSprite = brownAsteroidSprites[randomIndex];
+
+        return randomSprite;
+    }
     public AudioClip GetTakeDamageFx()
     {
         return takeDamageFX;
     }
+
+    public GameObject GetGreyRoidFx()
+    {
+        return greyRoidFx;
+    }
+
+    public GameObject GetBrownRoidFx()
+    {
+        return brownRoidFx;
+    }
+
+   
 }

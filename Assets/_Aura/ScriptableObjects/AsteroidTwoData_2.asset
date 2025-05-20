@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc3be20ddb9dab46b77fbb7d936c223, type: 3}
   m_Name: AsteroidTwoData_2
   m_EditorClassIdentifier: 
+  greyAsteroidSprites:
+  - {fileID: 21300000, guid: 740b8ccda0d80a34e87ff5fa9a137cba, type: 3}
+  - {fileID: 21300000, guid: ab232134ab4566d408a1e1774572ce33, type: 3}
+  - {fileID: 21300000, guid: ff930086ebea733409a44d5b4783d1d8, type: 3}
+  - {fileID: 21300000, guid: 522de16effa2f6f4cade71267e10e879, type: 3}
+  brownAsteroidSprites:
+  - {fileID: 21300000, guid: fe6bd57ec91e7ff4381a851ac31156fa, type: 3}
+  - {fileID: 21300000, guid: f59aee0313a5d6d42b9b3b3d563d0013, type: 3}
+  - {fileID: 21300000, guid: 5225e83e55f4e2241b06633e52d25103, type: 3}
+  - {fileID: 21300000, guid: 6b3a0976435cc1c43be762a39c1a5441, type: 3}
   minAsteroidScale: 1
   maxAsteroidScale: 5
   smallAsteroidScaleCutoff: 2
@@ -22,15 +32,6 @@ MonoBehaviour:
   mediumAsteroidMaxMoveSpeed: 3
   largeAsteroidMinMoveSpeed: 1
   largeAsteroidMaxMoveSpeed: 3
-  asteroidSprites:
-  - {fileID: 1474014828341702776, guid: fe6bd57ec91e7ff4381a851ac31156fa, type: 3}
-  - {fileID: 5714456842437531129, guid: 5225e83e55f4e2241b06633e52d25103, type: 3}
-  - {fileID: -2492203099988907705, guid: 6b3a0976435cc1c43be762a39c1a5441, type: 3}
-  - {fileID: 4989708251766280082, guid: f59aee0313a5d6d42b9b3b3d563d0013, type: 3}
-  - {fileID: 6171837545649669406, guid: 740b8ccda0d80a34e87ff5fa9a137cba, type: 3}
-  - {fileID: -6382108678130425886, guid: ab232134ab4566d408a1e1774572ce33, type: 3}
-  - {fileID: -4501234463003357724, guid: ff930086ebea733409a44d5b4783d1d8, type: 3}
-  - {fileID: -2618887360935937271, guid: 522de16effa2f6f4cade71267e10e879, type: 3}
   smallAsteroidMinSpeed: 200
   smallAsteroidMaxSpeed: 400
   mediumAsteroidMinSpeed: 100
@@ -38,3 +39,5 @@ MonoBehaviour:
   largeAsteroidMinSpeed: 10
   largeAsteroidMaxSpeed: 20
   takeDamageFX: {fileID: 8300000, guid: 95586e864c6f4be44b9a6aaaeeabedd2, type: 3}
+  greyRoidFx: {fileID: 7917728981869475630, guid: fcb7b99784f1f194dadbf5e208243af3, type: 3}
+  brownRoidFx: {fileID: 7101678835149719872, guid: b6b7bfdb8739e814a82694c148d805d5, type: 3}

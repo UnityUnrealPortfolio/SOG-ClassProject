@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 522de16effa2f6f4cade71267e10e879
+guid: dad6cb9249d794144a9c6bb04ab5e77d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2618887360935937271
-    second: meteorGrey_big4_0
+      213: 6167707747861970047
+    second: planetHealthBar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meteorGrey_big4_0
+      name: planetHealthBar_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 98
-        height: 96
+        width: 600
+        height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90b37a812d7d7abd0800000000000000
-      internalID: -2618887360935937271
+      spriteID: f7cbcbdc489189550800000000000000
+      internalID: 6167707747861970047
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 041d57e87c924274da2aebbc6c7264e3
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      meteorGrey_big4_0: -2618887360935937271
+      planetHealthBar_0: 6167707747861970047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 522de16effa2f6f4cade71267e10e879
+guid: 1ed07d8e28403ed4d8ef0c8b830884a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2618887360935937271
-    second: meteorGrey_big4_0
+      213: -1555378249586793724
+    second: planet05_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meteorGrey_big4_0
+      name: planet05_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 98
-        height: 96
+        x: 103
+        y: 103
+        width: 1074
+        height: 1074
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90b37a812d7d7abd0800000000000000
-      internalID: -2618887360935937271
+      spriteID: 403a20609bf2a6ae0800000000000000
+      internalID: -1555378249586793724
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      meteorGrey_big4_0: -2618887360935937271
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
