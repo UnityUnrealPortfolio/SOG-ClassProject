@@ -7,6 +7,9 @@ TagManager:
   - laser
   - asteroid
   - planet
+  - weapon
+  - shield
+  - health
   layers:
   - Default
   - TransparentFX
@@ -14,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - player
+  - laser
   - 
   - 
   - 

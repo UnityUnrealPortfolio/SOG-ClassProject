@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3708866668093654808}
   - component: {fileID: 5515816038269987285}
   - component: {fileID: 4329134959065622431}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Laser
   m_TagString: laser
   m_Icon: {fileID: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserSpeed: 40
+  damageAmount: 20
 --- !u!1 &1066890565721471145
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4064607548570643306}
   - component: {fileID: 5153379756690103740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,6 +22,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f59aee0313a5d6d42b9b3b3d563d0013, type: 3}
   - {fileID: 21300000, guid: 5225e83e55f4e2241b06633e52d25103, type: 3}
   - {fileID: 21300000, guid: 6b3a0976435cc1c43be762a39c1a5441, type: 3}
+  <LargeAsteroidMaxHealth>k__BackingField: 300
+  <MediumAsteroidMaxHealth>k__BackingField: 200
+  <SmallAsteroidMaxHealth>k__BackingField: 50
+  <ShipDamagePoints>k__BackingField: 50
   minAsteroidScale: 1
   maxAsteroidScale: 5
   smallAsteroidScaleCutoff: 2
@@ -38,6 +42,6 @@ MonoBehaviour:
   mediumAsteroidMaxSpeed: 150
   largeAsteroidMinSpeed: 10
   largeAsteroidMaxSpeed: 20
-  takeDamageFX: {fileID: 8300000, guid: 95586e864c6f4be44b9a6aaaeeabedd2, type: 3}
-  greyRoidFx: {fileID: 7917728981869475630, guid: fcb7b99784f1f194dadbf5e208243af3, type: 3}
-  brownRoidFx: {fileID: 7101678835149719872, guid: b6b7bfdb8739e814a82694c148d805d5, type: 3}
+  <TakeDamageFX>k__BackingField: {fileID: 8300000, guid: 95586e864c6f4be44b9a6aaaeeabedd2, type: 3}
+  <GreyRoidFx>k__BackingField: {fileID: 7917728981869475630, guid: fcb7b99784f1f194dadbf5e208243af3, type: 3}
+  <BrownRoidFx>k__BackingField: {fileID: 7101678835149719872, guid: b6b7bfdb8739e814a82694c148d805d5, type: 3}

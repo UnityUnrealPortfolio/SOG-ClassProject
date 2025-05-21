@@ -24,12 +24,9 @@ public class AsteroidUIBehaviour : MonoBehaviour
     }
 
 
-    public void DisplayAsteroidDamage(int currentHealth)
-    {
-      
-        float fillValue = currentHealth/100f;
-        
+    public void DisplayAsteroidDamage(float healthValue)
+    { 
         //modify the health bar value
-        healthBarImage.fillAmount = fillValue;
+        healthBarImage.fillAmount = healthValue;
     }
 }

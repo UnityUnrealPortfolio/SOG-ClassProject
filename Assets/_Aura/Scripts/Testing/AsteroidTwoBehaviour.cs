@@ -3,19 +3,22 @@ using UnityEngine;
 
 public class AsteroidTwoBehaviour : MonoBehaviour
 {
+    #region Exposed Fields
     [SerializeField] private AsteroidTwoConfigSO asteroidTwoData;
     [SerializeField] private Transform asteroidVisualTransform;
     [SerializeField] private SpriteRenderer asteroidVisual;
-    [SerializeField] private AsteroidTwoSpin spinBehaviour;
-    [SerializeField] private int maxHealth = 100;//ToDo:move to scriptable object
+    [SerializeField] private AsteroidTwoSpin spinBehaviour; 
+    #endregion
 
 
     //phone book, notifies subscribers when asteroid takes damage
-    public event Action<int> OnTakeDamage;
+    public event Action<float> OnTakeDamage;
 
     //ToDo: convert to property
     private int currentHealth = 0;
 
+    //what is the max health of this asteroid instance based on it's scale
+    private float thisAsteroidMaxHealth = 0;
     //set randomly at start
     private AsteroidType asteroidType;
 
@@ -26,19 +29,17 @@ public class AsteroidTwoBehaviour : MonoBehaviour
     #region Mono Core Loop Callbacks
     private void Awake()
     {
+        //initialize asteroid type
         SetRandomType();
-        //initialize asteroid properties
-        SetRandomScaleAndSpeeds();
 
+        //initialize asteroid properties
+        InitializeAsteroidProperties();
+        
         //if grey asteroid - set random grey sprite
         //else if brown - set random brown sprite
         SetRandomSprite();
     }
 
-    private void Start()
-    {
-        currentHealth = maxHealth;
-    }
     private void Update()
     {
         //fall down in the world
@@ -60,6 +61,11 @@ public class AsteroidTwoBehaviour : MonoBehaviour
 
             //destroy laser
             Destroy(collision.gameObject);
+        }
+        else if (collision.CompareTag("Player"))
+        {
+           
+            TakeDamage(asteroidTwoData.ShipDamagePoints);
         }
 
         else if (collision.gameObject.CompareTag("planet"))
@@ -86,7 +92,7 @@ public class AsteroidTwoBehaviour : MonoBehaviour
             asteroidType = AsteroidType.BROWN;
         }
     }
-    private void SetRandomScaleAndSpeeds()
+    private void InitializeAsteroidProperties()
     {
         //get a random scale from asteroid data
         asteroidVisualTransform.localScale = asteroidTwoData.GetRandomScale();
@@ -97,9 +103,18 @@ public class AsteroidTwoBehaviour : MonoBehaviour
 
         //use random scale to also get a random move speed
         asteroidTwoSpeed = asteroidTwoData.GetRandomSpeedBasedOnScale(scaleValue);
+
+        //use random scale to set current health
+        SetAsteroidMaxHealth(scaleValue);
     }
+    private void SetAsteroidMaxHealth(float scaleValue)
+    {
+        //cache the max health of this asteroid instance
+        thisAsteroidMaxHealth = asteroidTwoData.GetmaxHealthBasedOnScale(scaleValue);
 
-
+        //initialize the current health to the max health
+        currentHealth = asteroidTwoData.GetmaxHealthBasedOnScale(scaleValue);
+    }
     private void SetRandomSprite()
     {
         //set the asteroidVisual to use based on type
@@ -118,9 +133,7 @@ public class AsteroidTwoBehaviour : MonoBehaviour
     #region Damage and Destruction Utility
     private void TakeDamage(int damageAmount)
     {
-        //reduce current health by a value
-        //if current health is less than or equal to zero
-        //then destroy the asteroid
+     
 
         currentHealth = currentHealth - damageAmount;
 
@@ -130,10 +143,10 @@ public class AsteroidTwoBehaviour : MonoBehaviour
         }
 
         //pass this information to the subscribers (calling subscribers)
-        OnTakeDamage?.Invoke(currentHealth);
+        OnTakeDamage?.Invoke(currentHealth/thisAsteroidMaxHealth);
 
         //inform audio fx manager to play audio
-        FindFirstObjectByType<AudioFXManager>().PlayAudioFx(asteroidTwoData.GetTakeDamageFx());
+        FindFirstObjectByType<AudioFXManager>().PlayAudioFx(asteroidTwoData.TakeDamageFX);
 
     }
     public void HandleDestruction()
@@ -141,11 +154,11 @@ public class AsteroidTwoBehaviour : MonoBehaviour
         //play a particle fx based on type
         if (asteroidType == AsteroidType.GREY)
         {
-         Instantiate(asteroidTwoData.GetGreyRoidFx(), transform.position, Quaternion.identity);
+         Instantiate(asteroidTwoData.GreyRoidFx, transform.position, Quaternion.identity);
         }
         else
         {
-            Instantiate(asteroidTwoData.GetBrownRoidFx(), transform.position, Quaternion.identity);
+            Instantiate(asteroidTwoData.BrownRoidFx, transform.position, Quaternion.identity);
         }
         //play a sound
         //inform game manager
